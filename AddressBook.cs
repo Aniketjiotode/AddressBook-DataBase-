@@ -227,6 +227,23 @@ namespace AddressBook_System
                 }
             }
         }
+        public void GetContactsbyDate()
+        {
+            Console.WriteLine("Enter Date (YYYY-MM-DD) to retrive contact data");
+            var date = Console.ReadLine();
+            var contacts = repo.GetContactsByDate(date);
+            if (contacts.Count <= 0)
+            {
+                Console.WriteLine($"list is empty");
+            }
+            else
+            {
+                foreach (var item in contacts)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
+        }
         public void UpdateContact()
         {
            
