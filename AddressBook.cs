@@ -244,6 +244,23 @@ namespace AddressBook_System
                 }
             }
         }
+        public void GetContactsbyStateOrCity()
+        {
+            Console.WriteLine("Enter City or State Name to retrive contact data");
+            var s = Console.ReadLine();
+            var contacts = repo.GetContactsByStateOrCity(s);
+            if (contacts.Count <= 0)
+            {
+                Console.WriteLine($"list is empty");
+            }
+            else
+            {
+                foreach (var item in contacts)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
+        }
         public void UpdateContact()
         {
            
