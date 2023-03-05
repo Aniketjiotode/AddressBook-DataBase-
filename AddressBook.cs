@@ -261,6 +261,35 @@ namespace AddressBook_System
                 }
             }
         }
+        public void InsertContact()
+        {
+            Contact con = new Contact();
+            Console.Write("Enter FirstName: ");
+            con.FirstName = Console.ReadLine();
+            Console.Write("Enter LastName: ");
+            con.LastName = Console.ReadLine();
+            Console.Write("Enter Address: ");
+            con.Address = Console.ReadLine();
+            Console.Write("Enter City: ");
+            con.City = Console.ReadLine();
+            Console.Write("Enter State: ");
+            con.State = Console.ReadLine();
+            Console.Write("Enter ZipCode: ");
+            con.ZipCode = int.Parse(Console.ReadLine());
+            Console.Write("Enter Email: ");
+            con.Email = Console.ReadLine();
+            Console.Write("Enter PhoneNumber: ");
+            con.PhoneNumber = int.Parse(Console.ReadLine());
+            var flag = repo.InsertContact(con);
+            if (flag)
+            {
+                Console.WriteLine("Employee Created Successfully..");
+            }
+            else
+            {
+                Console.WriteLine("Failed While Adding Employee");
+            }
+        }
         public void UpdateContact()
         {
            

@@ -46,7 +46,7 @@ namespace AddressBook_System
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter A to Add new contact\nEnter E to edit a contact\nEnter D to Delete a Contact\nEnter P to print the contacts\nEnter F to search the contacts\nEnter S to save the contacts\nEnter L to read the contacts\nEnter R to Get the contacts From DataBase\nEnter u to update the contacts From DataBase\nEnter Y to get the contacts by date From DataBase\nEnter C to get the contacts by State or City From DataBase");
+                Console.WriteLine("Enter A to Add new contact\nEnter E to edit a contact\nEnter D to Delete a Contact\nEnter P to print the contacts\nEnter F to search the contacts\nEnter S to save the contacts\nEnter L to read the contacts\nEnter R to Get the contacts From DataBase\nEnter u to update the contacts From DataBase\nEnter Y to get the contacts by date From DataBase\nEnter C to get the contacts by State or City From DataBase\nEnter I to Insert new contacts in DataBase");
                 char ch = Console.ReadLine().ToUpper()[0];
                 switch (ch)
                 {
@@ -101,7 +101,10 @@ namespace AddressBook_System
                     case 'C':
                         addressBook.GetContactsbyStateOrCity();
                         break;
-                    default:
+                    case 'I':
+                        addressBook.InsertContact();
+                        break;
+                    default: Console.WriteLine("Enter invalid input");
                         break;
                 }
                 Thread.Sleep(5000);

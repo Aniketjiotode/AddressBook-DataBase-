@@ -191,5 +191,15 @@ namespace AddressBook_System
             connection.Close();
             return con;
         }
+        public bool InsertContact(Contact conts)
+        {
+            var Sql = @$"insert into contacts(FirstName,LastName,Address,City,State,ZipCode,Email,PhoneNumber) values('{conts.FirstName}','{conts.LastName}', '{conts.Address}','{conts.City}','{conts.State}',{conts.ZipCode},'{conts.Email}',{conts.PhoneNumber})";
+            SqlConnection con = new SqlConnection(ConnectionString);
+            SqlCommand sqlCommand = new SqlCommand(Sql, con);
+            con.Open();
+            int output = sqlCommand.ExecuteNonQuery();
+            con.Close();
+            return output > 0;
+        }
     }
 }
