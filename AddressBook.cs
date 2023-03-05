@@ -227,6 +227,19 @@ namespace AddressBook_System
                 }
             }
         }
+        public void UpdateContact()
+        {
+           
+            var flag = repo.UpdateContacts();
+            if (flag)
+            {
+                Console.WriteLine("Contact Updated Successfully..");
+            }
+            else
+            {
+                Console.WriteLine("Failed While Updating Contact");
+            }
+        }
         public void EditContact()
         {
             Console.WriteLine("Enter FirstName of conatc to edit that contact");
